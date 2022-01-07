@@ -1,0 +1,90 @@
+body {
+   font-family: 'Montserrat', sans-serif;
+}
+
+#app {
+   height: 100vh;
+}
+
+header {
+   height: 70px;
+   padding: 10px;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   background-color: #2E3A46;
+
+}
+header img {
+   height: 100%;
+   cursor: pointer;
+}
+
+#filter {
+   width: 300px;
+}
+
+main {
+   height: calc(100% - 70px);
+
+   display: flex;
+   align-items: center;
+
+   overflow-y: auto;
+   overflow-x: hidden;
+   background-image: linear-gradient(#253749, #1E2D3B);
+}
+.myContainer {
+   width: 1170px;
+   margin: 0 auto;
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}
+.album {
+   height: 300px;
+   width: calc(100% / 5 - 40px);
+   margin: 10px 20px;
+   padding: 20px;
+
+   background-color: #2E3A46;
+}
+.album > p {
+   margin: 0;
+   color: #807F7F;
+}
+.album-image {
+   height: 50%;
+   overflow-y: hidden;
+
+}
+.album-image img {
+   width: 100%;
+}
+.album-title {
+   height: 35%;
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+.album-title p {
+   font-size: 1.3rem;
+   color: #fff;
+}
+.album-author {
+   height: 15%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-end;
+
+}
+.album-author p {
+   line-height: 16px;
+}
