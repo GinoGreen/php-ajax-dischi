@@ -1,15 +1,21 @@
 <?php
 
-   $albumFiltered = [];
-   
-   $gerneSelected = strtoupper($_GET['genre']);
+   require_once __DIR__ . '/database.php';
 
-   foreach ($fullAlbums as $album) {
-      if (strtoupper($album['gerne']) === $gerneSelected) {
-         $albumFiltered[] = $album;
+   $albums = [];
+   
+   $gerneSelected = $_GET['genre'];
+
+   if ($gerneSelected === 'all') {
+      $albums = $discs;
+   } else {
+      foreach ($discs as $disc) {
+         if ($disc['genre'] === $gerneSelected) {
+            $albums[] = $disc;
+         }
       }
    }
 
    header('Content-Type: application/json');
 
-   echo json_encode($albumFiltered);
+   echo json_encode($albums);

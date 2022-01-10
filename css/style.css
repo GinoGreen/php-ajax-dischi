@@ -37,7 +37,7 @@ main {
    background-image: linear-gradient(#253749, #1E2D3B);
 }
 .myContainer {
-   width: 1170px;
+   width: 1 170px;
    margin: 0 auto;
    
    display: flex;
@@ -53,9 +53,9 @@ main {
 
    background-color: #2E3A46;
 }
-.album > p {
+.album  p {
    margin: 0;
-   color: #807F7F;
+   color: #fff;
 }
 .album-image {
    height: 50%;

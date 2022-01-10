@@ -1,8 +1,7 @@
 const app = new Vue({
    el: '#app',
    data: {
-      fullAlbumsApiURL: 'https://flynn.boolean.careers/exercises/api/array/music',
-      filteredAlbumsApiURL: 'http://localhost/php-ajax-dischi/server.php',
+      fullAlbumsApiURL: 'http://localhost/php-ajax-dischi/server.php',
       albums: [],
       genre: 'all',
    },
@@ -11,28 +10,19 @@ const app = new Vue({
    },
    methods: {
       getApi() {
-         axios.get(this.fullAlbumsApiURL)
+         axios.get(this.fullAlbumsApiURL, {
+            params: {
+               genre: this.genre,
+            }
+         })
             .then( response => {
-               this.albums = response.data.response;
+               this.albums = response.data;
                console.log(this.albums);
+               console.log(this.genre);
             })
             .catch( error => {
                console.log(error);
             });
       },
-      filterAlbums() {
-         axios.get(this.filteredAlbumsApiURL, {
-            params: {
-               gerne: this.gerne,
-            }
-         })
-            .then( response => {
-               this.albums = response.data;
-               console.log('albums filtrati');
-            })
-            .catch( error => {
-               console.log(error);
-            });
-      }
    },
 });

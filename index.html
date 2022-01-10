@@ -18,7 +18,7 @@
             id="filter"
             class="form-select"
             v-model="genre"
-            @change="[genre !== 'all' ? filterAlbums() : getApi()]"
+            @change="getApi()"
          >
             <option value="all" selected>Tutti i generi musicali</option>
             <option value="Rock">Rock</option>
